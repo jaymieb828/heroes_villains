@@ -1,4 +1,5 @@
 from django.db import models
+from supers_style.models import SupersStyle
 
 # Create your models here.
 class Supers(models.Model):
