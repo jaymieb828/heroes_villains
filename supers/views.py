@@ -17,6 +17,16 @@ from rest_framework import status
 def supers_list(request):
     
     if request.method == 'GET':
+
+        supers_style = request.query_params.get('style')
+        print(supers_style)
+
+        
+        supers = Supers.objects.all()
+
+        if supers_style:
+            supers = supers.filter(supers_style__name=supers_style)
+
         supers = Supers.objects.all()
         serializer= SupersSerializer(supers, many=True)
         return Response(serializer.data)  

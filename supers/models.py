@@ -9,3 +9,4 @@ class Supers(models.Model):
     secondary_ability = models.CharField(max_length=255)
     alter_ego = models.CharField(max_length=255)
     catch_phrase = models.CharField(max_length=255)
+    style = models.ForeignKey(SupersStyle, on_delete=models.CASCADE)
